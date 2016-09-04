@@ -1,0 +1,39 @@
+/*Importamos Fuentes, Mixins y Variables*/
+@import "fonts";
+@import "mixin";
+@import "variables";
+/*Importamos Bootstrap*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/*Importamos Font-Awesome*/
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body{
+	color: #444;
+	font-family: $font-LatoT;
+}
+
+.wrapper{
+	h1{
+		font-family: $font-LatoB;
+	}
+	a{
+		background-color: $dark-blue;
+		border: 1px solid $dark-blue;
+		border-radius: 5px;
+		color: $white;
+		display: inline-block;
+		margin-right: 15px;
+		padding: 5px 25px;
+		@include transition(all 0.4s ease-in-out);
+		&:hover{
+			background-color: $light-blue;
+			color: $dark-blue;
+			text-decoration: none;
+		}
+		&:active, &:focus{
+			text-decoration: none;
+		}
+	}
+}

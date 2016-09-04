@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'articles' %>
+<div class="wrapper container">
+  <h1>Lista de artículos</h1>
+  <table>
+    <tr>
+      <th class="main">Título</th>
+      <th class="main">Contenido</th>
+      <th class="main" colspan="3"></th>
+    </tr>
+
+    <% @articles.each do |article| %>
+    <tr class="content">
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td class="detail"><%= link_to 'Show', article_path(article) %></td>
+      <td class="detail"><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td class="detail"><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </table>
+  <br>
+  <%= link_to 'New article', new_article_path, class: "option" %> 
+  <%= link_to 'Home', root_path, class: "option" %>
+</div>
+
+

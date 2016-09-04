@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag 'articles' %>
+<div class="wrapper container">
+	<div class="article-detail">
+		<p>
+			<strong>Title:</strong>
+			<%= @article.title %>
+		</p>
+
+		<p>
+			<strong>Text:</strong>
+			<%= @article.text %>
+		</p>
+	</div>
+	<div class="comments">
+		<h2>Comments</h2>
+		<% @article.comments.each do |comment| %>
+		<%= render @article.comments %>
+		<% end %>
+	</div>
+
+	<h2>Add a comment:</h2>
+	<%= render 'comments/form' %>
+
+	<%= link_to 'Edit', edit_article_path(@article) , class: "option"%>
+	<%= link_to 'Back', articles_path , class: "option"%>
+	<%= link_to 'Home', root_path , class: "option"%>	
+</div>
+

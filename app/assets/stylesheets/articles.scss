@@ -1,0 +1,117 @@
+/*Importamos Fuentes, Mixins y Variables*/
+@import "fonts";
+@import "mixin";
+@import "variables";
+/*Importamos Bootstrap*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/*Importamos Font-Awesome*/
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body{
+	color: #444;
+	font-family: $font-LatoT;
+}
+
+.wrapper{
+	h1{
+		font-family: $font-LatoB;
+	}
+	table{
+		display: inline-block;
+		padding: 30px 0;
+		tr{
+			th, td{
+				padding: 10px 30px;
+			}
+			.main{
+				background-color: $dark-blue;
+				border: 1px solid $dark-blue;
+				color: $white;
+				font-size: 24px;
+			}
+			.detail{
+				padding: 10px 5px;
+			}
+		}
+		.content{
+			td{
+				border-bottom: 1px solid #ccc;
+				border-right: 1px solid #ccc;
+				&:first-child{
+					border-left: 1px solid #ccc;
+				}
+			}
+		}
+	}
+	.option{
+		background-color: $dark-blue;
+		border: 1px solid $dark-blue;
+		border-radius: 5px;
+		color: $white;
+		display: inline-block;
+		margin-right: 15px;
+		padding: 5px 25px;
+		@include transition(all 0.4s ease-in-out);
+		&:hover{
+			background-color: $white;
+			color: $dark-blue;
+			text-decoration: none;
+		}
+		&:active, &:focus{
+			text-decoration: none;
+		}
+	}
+	form{
+		padding-bottom: 20px;
+	}
+	.article-detail{
+		border-bottom: 2px dashed #ccc;
+		padding-top: 40px;
+		p{
+			strong{
+				font-family: $font-LatoB;
+				font-size: 25px;
+				padding-right: 5px;
+			}
+		}	
+	}
+	.comments{
+		border-bottom: 2px dashed #ccc;
+	}
+	h2{
+		font-family: $font-LatoS;
+		font-size: 20px;
+	}
+	
+}
+
+.comments-detail{
+	padding-bottom: 20px;
+	p{
+		strong{
+			font-family: $font-LatoS;
+			font-style: italic;
+			padding-right: 5px;
+		}
+	}
+	.option{
+		background-color: $dark-blue;
+		border: 1px solid $dark-blue;
+		border-radius: 5px;
+		color: $white;
+		display: inline-block;
+		margin-right: 15px;
+		padding: 5px 25px;
+		@include transition(all 0.4s ease-in-out);
+		&:hover{
+			background-color: $white;
+			color: $dark-blue;
+			text-decoration: none;
+		}
+		&:active, &:focus{
+			text-decoration: none;
+		}
+	}
+}
